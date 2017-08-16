@@ -1,6 +1,5 @@
 
-#
-bilibili [夏日绘板](http://live.bilibili.com/pages/1702/pixel-drawing) 像素填充脚本
+# bilibili [夏日绘板](http://live.bilibili.com/pages/1702/pixel-drawing) 像素填充脚本
 
 ## 使用
 
@@ -11,9 +10,11 @@ bilibili [夏日绘板](http://live.bilibili.com/pages/1702/pixel-drawing) 像�
 npm install
 ```
 
-2.在`config.js` 设置你b站登录状态的cookie
+2. 在`config.js` 设置你b站登录状态的cookie
 
-3.启动脚本
+3. 启动脚本
 ```
 node index.js
 ```
+
+PS: 脚本按照`canvas.png`进行像素覆盖，灰色为忽略区域
