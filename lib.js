@@ -41,7 +41,8 @@ module.exports = {
     rgb2Hex(red, green, blue) {
         const rgb = ((blue | green << 8 | red << 16) | 1 << 24).toString(16).slice(1)
         let hex = rgb.toString('16')
-        if (red === green && green === blue) {
+
+        if (hex.slice(0, 3) === hex.slice(3)) {
             hex = hex.slice(0, 3)
         }
         return '#' + hex
@@ -55,8 +56,7 @@ module.exports = {
                     const [r, g, b] = [
                         pixels.data[i],
                         pixels.data[i + 1],
-                        pixels.data[i + 2],
-                        pixels.data[i + 3],
+                        pixels.data[i + 2]
                     ]
                     const hex = this.rgb2Hex(r, g, b)
                     if (hex === ignoreColor) continue

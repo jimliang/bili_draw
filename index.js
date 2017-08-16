@@ -3,12 +3,13 @@ const lib = require('./lib')
 
 async function main() {
     console.log('正在加载图片模板')
-    const pd = await lib.getPixelsData('canvas.png', '#646')
+    const pd = await lib.getPixelsData('canvas.png', '#646464')
     console.log('图片模板加载完成，需要校正的色块有： ', pd.length)
     console.log()
     check()
     async function check() {
         console.log('校正中...')
+        pd.sort(() => Math.random())
         const bitmap = await lib.getBitmap()
         for(const [x, y, colorName] of pd) {
             const bn = bitmap[x + y * 1280]
