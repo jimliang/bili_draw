@@ -1,4 +1,9 @@
 
+/**
+ * 原大图和覆盖后大图的对比
+ * bitmap.png & bitmap_new.png
+ */
+
 const Jimp = require('jimp')
 const lib = require('./lib')
 

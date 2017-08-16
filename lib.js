@@ -47,7 +47,7 @@ module.exports = {
         }
         return '#' + hex
     },
-    getPixelsData(file, ignoreColor) {
+    getPixelsData(file, ignoreColor, noMatchCallback) {
         return new Promise((resolve, reject) => {
             getPixels(file, (err, pixels) => {
                 if (err) return reject(err)
@@ -68,6 +68,7 @@ module.exports = {
                         result.push([x, y, colorName])
                     } else {
                         console.warn('颜色不对应: ', x, y, hex)
+                        noMatchCallback && noMatchCallback({ x, y, color: [r, g, b] })
                     }
 
                 }
